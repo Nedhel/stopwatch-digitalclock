@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stop-Watch</title> 
+        <style>
+            #container{
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+                grid-template-rows: auto auto;
+                row-gap: 1px;
+                column-gap: 1px;
+                border: 1px solid black;
+                width: 400px;
+                height: 200px;
+            }
+            #container > div{                
+                text-align: center;
+                color: greenyellow;
+                border-radius: 10px;
+            }
+            .up{                
+                font-size: 80px;
+                background-color: rgb(40, 39, 39); 
+                overflow: hidden; 
+                transition: transform 2s;                                      
+            }
+            .up:hover{
+                transform:translateY(100px) rotateX(180deg) 
+            }
+            .up p{                
+                margin: 0;
+                transform:translateY(50px)                
+            }
+            .down{                 
+                font-size: 80px;          
+                background-color: black;
+                overflow: hidden;   
+            }
+            .down p{                
+                margin: 0;
+                transform:translateY(-50px)
+            }            
+        </style>       
+    </head>
+    <body>
+        <div id="container">            
+            <div class="up"><p>1</p></div>
+            <div class="up"><p>2</p></div>            
+            <div class="up"><p>:</p></div>            
+            <div class="up"><p>3</p></div>
+            <div class="up"><p>0</p></div>            
+            <div class="down"><p>1</p></div>
+            <div class="down"><p>2</p></div>
+            <div class="down"><p>:</p></div>
+            <div class="down"><p>3</p></div>
+            <div class="down"><p>0</p></div>            
+        </div>             
+    </body>
+</html>
