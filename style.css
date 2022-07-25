@@ -4,9 +4,9 @@
     grid-template-rows: auto auto;
     row-gap: 1px;
     column-gap: 1px;
-    border: 1px solid black;
     width: 400px;
     height: 200px;
+    background-color: rgb(95, 93, 93);
 }
 #container > div{                
     text-align: center;
@@ -19,12 +19,9 @@
     overflow: hidden; 
     transition: transform 2s;                                      
 }
-.up:hover{
-    transform:translateY(100px) rotateX(180deg) 
-}
 .up p{                
     margin: 0;
-    transform:translateY(50px)                
+    transform:translateY(55px)                
 }
 .down{                 
     font-size: 80px;          
@@ -33,5 +30,16 @@
 }
 .down p{                
     margin: 0;
-    transform:translateY(-50px)
+    transform:translateY(-45px)
+}
+#watch2{
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    font-family: 'Wallpoet';
+    width: 50%;
+}
+#stopwatch{
+    border: 1px solid black;
+    width: 50%;
 }

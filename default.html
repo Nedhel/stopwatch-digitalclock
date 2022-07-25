@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <title>Stop-Watch</title> 
-        <link rel="stylesheet" href="style.css">       
+        <link rel="stylesheet" href="style.css"> 
+        <link href='https://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet'>
+        <script src="functions.js"></script>     
     </head>
     <body>
         <div id="container">            
@@ -16,6 +18,21 @@
             <div class="down" id="divcolon_down"><p id="pcolon_down">:</p></div>
             <div class="down" id="divmin_down1"><p id="pmin_down1">3</p></div>
             <div class="down" id="divmin_down2"><p id="pmin_down2">0</p></div>            
-        </div>             
+        </div>         
+        <div id="watch2">
+            <p id="digital">hola</p>            
+        </div> 
+        <div id="stopwatch">
+            <p id="time"></p>
+            <button type="button">Empezar</button>
+            <button type="button">Parcial</button>
+            <button type="button">Detener</button>
+            <button type="button">Reiniciar</button>            
+            <div id="records">
+                <ol>Record</ol>
+                <ol>Record</ol>
+                <ol>Record</ol>
+            </div>
+        </div>
     </body>
 </html>
