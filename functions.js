@@ -4,6 +4,7 @@ let hour1 = parseInt(hours / 10);
 let hour2 = hours % 10;
 let minute1 = parseInt(minutes / 10);
 let minute2 = minutes % 10;
+let timer = 0;
 
 function addElement(element, parentId, pos, atrrId, atrrClass, content) {
     let newElement = document.createElement(element);
@@ -84,8 +85,63 @@ function watchDigital() {
         " : " +
         new Date().getSeconds();
 }
+function startAndStop(flag) {
+    if (flag) {
+        timer = setInterval(count, 91);
+        document.getElementById("start").disabled = true;
+        document.getElementById("start").style.backgroundColor = "gray";
+    } else {
+        clearInterval(timer);
+        document.getElementById("start").disabled = false;
+        document.getElementById("start").style.backgroundColor = "green";
+    }
+}
+function count() {
+    let time = document
+        .getElementById("time")
+        .innerHTML.split(":")
+        .map((y) => Number(y));
+    if (time[2] < 10) {
+        time[2] += 1;
+        document.getElementById(
+            "time"
+        ).innerHTML = `${time[0]}:${time[1]}:${time[2]}`;
+    } else if (time[2] == 10 && time[1] < 60) {
+        time[2] = 0;
+        time[1] += 1;
+        document.getElementById(
+            "time"
+        ).innerHTML = `${time[0]}:${time[1]}:${time[2]}`;
+    } else {
+        time[0] += 1;
+        time[1] = 0;
+        time[2] = 0;
+        document.getElementById(
+            "time"
+        ).innerHTML = `${time[0]}:${time[1]}:${time[2]}`;
+    }
+}
+function lapse() {
+    const node = document.createElement("li");
+    node.innerHTML = document.getElementById("time").innerHTML;
+    document.getElementById("records").appendChild(node);
+}
+function reset() {
+    clearInterval(timer);
+    document.getElementById("time").innerHTML = "0:0:0";
+    document.getElementById("start").disabled = false;
+    document.getElementById("start").style.backgroundColor = "green";
+}
 window.addEventListener("load", () => {
     setCurretTime();
     setInterval(updateTime, 1000);
     setInterval(watchDigital, 1000);
+    document
+        .getElementById("start")
+        .addEventListener("click", () => startAndStop(true));
+    document
+        .getElementById("stop")
+        .addEventListener("click", () => startAndStop(false));
+    document.getElementById("lapse").addEventListener("click", lapse);
+    document.getElementById("reset").addEventListener("click", reset);
 });

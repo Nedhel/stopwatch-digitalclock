@@ -42,4 +42,18 @@
 #stopwatch{
     border: 1px solid black;
     width: 50%;
+    text-align: center;
+    font-size: 30px;
+    color: red;
+    font-weight: bolder;    
+}
+button{
+    background-color: green;
+    color: white;
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+}
+button:active{
+    background-color: rgb(4, 100, 4);
 }
